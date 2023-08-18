@@ -7,46 +7,155 @@
     <title>ToDo-list</title>
 </head>
 <body>
-    <style>
-        const inputBox = document.getElementById("input-box");
-const listcontaner = document.getElementById("list-contaner");
 
-function addTask(){
-    if(inputBox.value ===''){
-        alert("You must write something!");
-        }
-    else{
-        let li = document.createElement("li");
-        li.innerHTML = inputBox.value;
-        listcontaner.appendChild(li);
-        let span = document.createElement("span");
-        span.innerHTML = "\u00d7";
-        li.appendChild(span);
-    }
-    inputBox.value = "";
-    saveData();
+       <style>
+    *{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
 }
 
-listcontaner.addEventListener("click", function(e){
-    if(e.target.tagName === "LI"){
-        e.target.classList.toggle("checked");
-    }
-    else if (e.target.tagName =="SPAN"){
-        e.target.parentElement.remove();
-
-    }
-
-    }, false);
+.contaner{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #153677, #4e085f);
+    padding: 10px;
     
-function saveData(){
-    localStorage.setItem("data", listcontaner.innerHTML)
-}
-function showTask(){
-    listcontaner.innerHTML = localStorage.getItem("data");
 
 }
-showTask();
-    </style>
+.todoapp{
+
+ width: 100%;   
+ max-width: 540px;
+ background: #ffffff;
+ margin: 100px auto 20px;
+ padding: 40px 30px 70px ;
+ border-radius: 10px;
+ transition: all 0.5s;
+}
+.todoapp:hover{
+    background-color:#f9fbcb ;
+}
+.todoapp h2{
+    color:#002765 ;
+    display: flex;
+    align-items: center;
+    margin-bottom:20px ;
+
+}
+.todoapp h2 img{
+    width:15%;
+    margin: 0%;
+}
+.row{
+    display: flex;
+    align-items: center;
+    background: #e8e8e8 ;
+    border-radius: 30px;
+    padding: left 20px;
+    margin-bottom: 25px;
+    justify-content: center;
+    transition: all 0.8s;
+
+}
+.row:hover{
+    background-color: #dbe3ff;
+    
+
+}
+
+input{
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 18px;
+    font-weight: 14px;
+
+}
+button{
+
+    border: none;
+    outline: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #e8e8e8;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+    transition: all 0.3s;
+}
+button:hover{
+    color: rgb(255, 255, 255);
+    background-color: #f53f2b;
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px ;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 18px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(Img/unchecked.png);
+    background-size: cover ;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked:hover{
+    color: #1e93e0;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url(img/checked.png);
+    size: 20px;
+    /*  */
+    
+}
+ul li:hover{
+color: rgba(231, 64, 49, 0.89);
+
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    /* color: #f53f2b; */
+    line-height: 40px ;
+    text-align: center;
+    border-radius: 50px;
+    transition: all 0.8s;
+
+}
+ul li span:hover{
+    background : #ffbda7;
+    color: #ffffff;
+    
+    
+}
+</style>
+   
     <div class="contaner">
         <div class="todoapp">
         
