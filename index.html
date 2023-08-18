@@ -107,7 +107,7 @@ ul li::before{
     height: 18px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(Img/unchecked.png);
+    background-image: url(unchecked.png);
     background-size: cover ;
     background-position: center;
     top: 12px;
@@ -124,7 +124,7 @@ ul li.checked:hover{
     text-decoration: line-through;
 }
 ul li.checked::before{
-    background-image: url(img/checked.png);
+    background-image: url(checked.png);
     size: 20px;
     /*  */
     
@@ -160,8 +160,8 @@ ul li span:hover{
     background: linear-gradient(135deg, #153677, #4e085f)
     padding: 10px ">
         <div class="todoapp">
-         
-            <h2>  To-Do List<img src="Img/Todo.png" alt="TODO icon"></h2>
+         <link rel="stylesheet" href="/style.css">
+            <h2>  To-Do List<img src="Todo.png" alt="TODO icon"></h2>
             <div class="row">
                 <input type="text" id="input-box" placeholder="Add your Text">
                 <button onclick="addTask()"> Add </button>
