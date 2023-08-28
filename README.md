@@ -1,8 +1,8 @@
-# ToDo List Website App
+# ToDo List web-App
 
 ![App Screenshot](photo/Todo.png) <!-- You can replace this with a screenshot of your app -->
 
-Welcome to the ToDo List Website App repository!<br><hr> 📝 This app allows you to manage your tasks effectively using a simple and intuitive interface.
+Welcome to the ToDo List Website App repository!<br> 📝 This app allows you to manage your tasks effectively using a simple and intuitive interface.
 
 ## Features
 
